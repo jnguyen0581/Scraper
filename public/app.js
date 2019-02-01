@@ -1,3 +1,15 @@
+$(document).on("click", "#button", function() {
+  console.log("button works");
+  $.ajax({
+      method: "GET",
+      url: "/scrape"
+  }).then(function() {
+      // console.log(data);
+      mainP();
+  });
+
+});
+function mainP () {
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
@@ -6,7 +18,7 @@ $.getJSON("/articles", function(data) {
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
   }
 });
-
+}
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
