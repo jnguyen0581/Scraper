@@ -16,6 +16,7 @@
         overflow: auto;
         width: 60%;
         height: 700px;
+        boder: solid black;
       }
       #notes {
         float: right;
@@ -37,11 +38,22 @@
     </style>
   </head>
   <body>
+    <div class= "container">
+        <div class="jumbotron" align="center">
+            <h1 class="display-4">Scraping with Mongoose</h1>
+            <h2 class="display-6">POPSUGAR <a class="btn btn-primary" href="/scrape" role="button">(Scrape)</a></h2>
+          
+          
+            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Saved Articles</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Notes</a> -->
+          </div>
     <div id="wrapper">
-      <h1>POPSUGAR Website</h1>
-      <div id="articles"></div>
+      <div id="articles">
+        
+      </div>
       <div id="notes"></div>
     </div>
+  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>

@@ -30,7 +30,12 @@ app.use(express.static("public"));
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapedb";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
+//Set handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Routes
+require("./routes/api_routes.js")(app);
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
